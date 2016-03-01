@@ -1,4 +1,5 @@
 import pygame
+import os.path
 
 
 class BrickBreaker:
@@ -7,7 +8,7 @@ class BrickBreaker:
         # initializes pygame
         pygame.init()
         try:
-            pygame.mixer.music.load('Overworld.ogg')
+            pygame.mixer.music.load(os.path.join('Sounds', 'Overworld.ogg'))
             # sets the volume lower -- .set_volume(x) where x is between 0 and 1
             pygame.mixer.music.set_volume(.5)
             # at -1, the song/music repeats.
@@ -173,7 +174,7 @@ class BrickBreaker:
                 self.__state = 3
             try:
                 pygame.mixer.music.stop()
-                gameOver = pygame.mixer.Sound('game over.ogg')
+                gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                 gameOver.set_volume(.5)
                 gameOver.play(0)
             except pygame.error as err:
@@ -215,7 +216,7 @@ class BrickBreaker:
                 self.__brick = pygame.draw.rect(self.__screen, (0, 0, 0),
                                                 self.__brick)
                 try:
-                    brickSmash = pygame.mixer.Sound('smb_breakblock.wav')
+                    brickSmash = pygame.mixer.Sound(os.path.join('Sounds', 'smb_breakblock.wav'))
                     brickSmash.set_volume(.5)
                     brickSmash.play(0)
                 except pygame.error as err:
@@ -227,7 +228,7 @@ class BrickBreaker:
             self.__state = 2
             try:
                 pygame.mixer.music.stop()
-                gameWon = pygame.mixer.Sound('World Clear.ogg')
+                gameWon = pygame.mixer.Sound(os.path.join('Sounds', 'World Clear.ogg'))
                 gameWon.play(0)
             except pygame.error as err:
                 print(err)
@@ -245,7 +246,7 @@ class BrickBreaker:
             if self.__lives > 0:
                 try:
                     pygame.mixer.music.stop()
-                    lifeLost = pygame.mixer.Sound('Life Lost.ogg')
+                    lifeLost = pygame.mixer.Sound(os.path.join('Sounds', 'Life Lost.ogg'))
                     lifeLost.play(0)
                 except pygame.error as err:
                     print(err)
@@ -260,7 +261,7 @@ class BrickBreaker:
                 self.__state = 3
                 try:
                     pygame.mixer.music.stop()
-                    gameOver = pygame.mixer.Sound('game over.ogg')
+                    gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                     gameOver.set_volume(.5)
                     gameOver.play(0)
                 except pygame.error as err:
@@ -353,7 +354,7 @@ class BrickBreaker:
                     self.__state = 3
                     try:
                         pygame.mixer.music.stop()
-                        gameOver = pygame.mixer.Sound('game over.ogg')
+                        gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                         gameOver.set_volume(.5)
                         gameOver.play(0)
                     except pygame.error as err:
