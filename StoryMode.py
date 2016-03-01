@@ -245,7 +245,7 @@ class StoryMode:
 
     def __renderMario(self):
         try:
-            mario = pygame.image.load("marioSprite.png")
+            mario = pygame.image.load(os.path.join('Images', "marioSprite.png"))
             mario = pygame.transform.scale(mario, (50, 50))
             self.__screen.blit(mario, (172, 155))
         except pygame.error as err:
