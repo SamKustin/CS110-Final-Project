@@ -1,4 +1,5 @@
 import pygame
+import os.path
 from pygame.locals import *
 import random
 
@@ -10,7 +11,7 @@ class Simon:
         # Format of .ogg: Ogg is an open and standardized bitstream container
         # format designed for streaming and manipulation.
         try:
-            pygame.mixer.music.load('Overworld.ogg')
+            pygame.mixer.music.load(os.path.join('Sounds', 'Overworld.ogg'))
             pygame.mixer.music.set_volume(.5)
             pygame.mixer.music.play(-1)
         except pygame.error as err:
@@ -166,7 +167,7 @@ class Simon:
                 if item == [1]:
                     self.__makeBrightYellowRect()
                     try:
-                        simonSound1 = pygame.mixer.Sound("simonSound1.ogg")
+                        simonSound1 = pygame.mixer.Sound(os.path.join('Sounds', "simonSound1.ogg"))
                         simonSound1.play(0)
                     except pygame.error as err:
                         print(err)
@@ -178,7 +179,7 @@ class Simon:
                 elif item == [2]:
                     self.__makeBrightRedRect()
                     try:
-                        simonSound2 = pygame.mixer.Sound("simonSound2.ogg")
+                        simonSound2 = pygame.mixer.Sound(os.path.join('Sounds', "simonSound2.ogg"))
                         simonSound2.play(0)
                     except pygame.error as err:
                         print(err)
@@ -188,7 +189,7 @@ class Simon:
                 elif item == [3]:
                     self.__makeBrightBlueRect()
                     try:
-                        simonSound3 = pygame.mixer.Sound("simonSound3.ogg")
+                        simonSound3 = pygame.mixer.Sound(os.path.join('Sounds', "simonSound3.ogg"))
                         simonSound3.play(0)
                     except pygame.error as err:
                         print(err)
@@ -198,7 +199,7 @@ class Simon:
                 else:
                     self.__makeBrightGreenRect()
                     try:
-                        simonSound4 = pygame.mixer.Sound("simonSound4.ogg")
+                        simonSound4 = pygame.mixer.Sound(os.path.join('Sounds', "simonSound4.ogg"))
                         simonSound4.play(0)
                     except pygame.error as err:
                         print(err)
@@ -250,7 +251,7 @@ class Simon:
                 try:
                     # plays sounds indicating user inputted correctly
                     pygame.mixer.music.stop()
-                    oneUp = pygame.mixer.Sound("smw_1-up.wav")
+                    oneUp = pygame.mixer.Sound(os.path.join('Sounds', "smw_1-up.wav"))
                     oneUp.play(0)
                 except pygame.error as err:
                     print(err)
@@ -261,7 +262,7 @@ class Simon:
                 self.__state = 3
                 try:
                     pygame.mixer.music.stop()
-                    gameOver = pygame.mixer.Sound('game over.ogg')
+                    gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                     gameOver.set_volume(.5)
                     gameOver.play(0)
                 except pygame.error as err:
@@ -360,7 +361,7 @@ class Simon:
                     self.__state = 3
                     try:
                         pygame.mixer.music.stop()
-                        gameOver = pygame.mixer.Sound('game over.ogg')
+                        gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                         gameOver.set_volume(.5)
                         gameOver.play(0)
                     except pygame.error as err:
@@ -382,7 +383,7 @@ class Simon:
                 self.__state = 2
                 try:
                     pygame.mixer.music.stop()
-                    win = pygame.mixer.Sound("World Clear.ogg")
+                    win = pygame.mixer.Sound(os.path.join('Sounds', "World Clear.ogg"))
                     win.play(0)
                 except pygame.error as err:
                         print(err)
