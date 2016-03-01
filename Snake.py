@@ -1,5 +1,6 @@
 from SpriteSheet import *
 import pygame
+import os.path
 import random
 
 
@@ -7,7 +8,7 @@ class Snake:
     def __init__(self):
         pygame.init()
         try:
-            pygame.mixer.music.load('Overworld.ogg')
+            pygame.mixer.music.load(os.path.join('Sounds', 'Overworld.ogg'))
             pygame.mixer.music.set_volume(.5)
             pygame.mixer.music.play(-1)
         except pygame.error as err:
@@ -163,7 +164,7 @@ class Snake:
                     self.__state = 3
                     try:
                         pygame.mixer.music.stop()
-                        gameOver = pygame.mixer.Sound('game over.ogg')
+                        gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                         gameOver.set_volume(.5)
                         gameOver.play(0)
                     except pygame.error as err:
@@ -177,7 +178,7 @@ class Snake:
                             self.__state = 3
                             try:
                                 pygame.mixer.music.stop()
-                                gameOver = pygame.mixer.Sound('game over.ogg')
+                                gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                                 gameOver.set_volume(.5)
                                 gameOver.play(0)
                             except pygame.error as err:
@@ -262,7 +263,7 @@ class Snake:
                     self.__state = 3
                     try:
                         pygame.mixer.music.stop()
-                        gameOver = pygame.mixer.Sound('game over.ogg')
+                        gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
                         gameOver.set_volume(.5)
                         gameOver.play(0)
                     except pygame.error as err:
@@ -284,7 +285,7 @@ class Snake:
                 self.__state = 2
                 try:
                     pygame.mixer.music.stop()
-                    gameWon = pygame.mixer.Sound('World Clear.ogg')
+                    gameWon = pygame.mixer.Sound(os.path.join('Sounds', 'World Clear.ogg'))
                     gameWon.play(0)
                 except pygame.error as err:
                     print(err)
@@ -304,7 +305,7 @@ class Snake:
                                           (0, 480 - self.__snakeSize) /
                                           10.0) * 10.0
                 try:
-                    growSound = pygame.mixer.Sound('smb_powerup.wav')
+                    growSound = pygame.mixer.Sound(os.path.join('Sounds', 'smb_powerup.wav'))
                     growSound.set_volume(.25)
                     growSound.play(0)
                 except pygame.error as err:
