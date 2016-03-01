@@ -1,11 +1,11 @@
 # CS110-Final-Project
 **"Super Princess Peach"** 
-A series of 3 mini games (brick breaker, simon, snake) linked to a story mode game option
+A series of 3 mini games (brick breaker, simon, snake) linked to a story mode game option.
 
 **Created by:** Sam Kustin, Adam Nieto, Amy Chen, Melissa Wolff
 
 * This game was created as a final project for CS 110 at Binghamton University in Fall 2015.   
-* The game was made using python and requires **Pygame** to run
+* The game was made using python and requires **Pygame** to run.
 
 **Mini Game Mode:**
 Play all three mini games (brick breaker, simon, and snake) in any order you want and as many times as you want.
