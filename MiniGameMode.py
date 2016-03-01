@@ -1,4 +1,5 @@
 import pygame
+import os.path
 import BrickBreaker
 import Simon
 import Snake
@@ -87,7 +88,7 @@ class MiniGameMode:
                         self.__completed = True
 
             try:
-                background = pygame.image.load("PeachesCastle.png")
+                background = pygame.image.load(os.path.join('Images', "PeachesCastle.png"))
                 self.__screen.blit(background, (0, -2))
             except pygame.error as err:
                 print(err)

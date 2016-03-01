@@ -1,4 +1,5 @@
 import pygame
+import os.path
 
 
 class Credits:
@@ -15,7 +16,7 @@ class Credits:
         self.__font = pygame.font.SysFont("Helvetica", 22, bold=True,
                                           italic=False)
         try:
-            gameWon = pygame.mixer.Sound('World Clear.ogg')
+            gameWon = pygame.mixer.Sound(os.path.join('Sounds', 'World Clear.ogg'))
             gameWon.play(0)
         except pygame.error as err:
                 print(err)
@@ -70,7 +71,7 @@ class Credits:
             self.__screen.fill((0, 0, 0))
             try:
                 # loads picture of mario, peach, and rest of group
-                groupPic = pygame.image.load("peachAndFriends.png")
+                groupPic = pygame.image.load(os.path.join('Images', "peachAndFriends.png"))
                 groupPic = pygame.transform.scale(groupPic, (300, 200))
                 self.__screen.blit(groupPic, (180, 280))
             except pygame.error as err:

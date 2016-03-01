@@ -1,5 +1,6 @@
 import SpriteSheet
 import pygame
+import os.path
 import BrickBreaker
 import Simon
 import Snake
@@ -12,7 +13,7 @@ class StoryMode:
     def __init__(self, x, y):
         pygame.init()
         try:
-            pygame.mixer.music.load('05-super-mario-64-main-theme.wav')
+            pygame.mixer.music.load(os.path.join('Sounds', '05-super-mario-64-main-theme.wav'))
             pygame.mixer.music.set_volume(.5)
             # -1 means that the music infinitely play while game is playing
             pygame.mixer.music.play(-1)
@@ -154,7 +155,7 @@ class StoryMode:
 
     def __renderLogo(self):
         try:
-            peachSign = pygame.image.load("super_princess_peach_logo.gif")
+            peachSign = pygame.image.load(os.path.join('Images', "super_princess_peach_logo.gif"))
             peachSign = pygame.transform.scale(peachSign, (400, 120))
             self.__screen.blit(peachSign, (120, 6))
         except pygame.error as err:
@@ -219,7 +220,7 @@ class StoryMode:
         self.__screen.blit(peachCastle, (520, 290))
         try:
             if self.__state == 2:
-                mario = pygame.image.load("marioSprite.png")
+                mario = pygame.image.load(os.path.join('Images', "marioSprite.png"))
                 mario = pygame.transform.scale(mario, (45, 45))
                 # mario appears near peach's castle if game is won
                 self.__screen.blit(mario, (605, 350))
@@ -235,7 +236,7 @@ class StoryMode:
 
     def __renderBowser(self):
         try:
-            bowser = pygame.image.load("bowser.png")
+            bowser = pygame.image.load(os.path.join('Images', "bowser.png"))
             bowser = pygame.transform.scale(bowser, (60, 60))
             bowser = pygame.transform.flip(bowser, True, False)
             self.__screen.blit(bowser, (42, 150))
@@ -244,7 +245,7 @@ class StoryMode:
 
     def __renderMario(self):
         try:
-            mario = pygame.image.load("marioSprite.png")
+            mario = pygame.image.load(os.path.join('Images', "marioSprite.png"))
             mario = pygame.transform.scale(mario, (50, 50))
             self.__screen.blit(mario, (172, 155))
         except pygame.error as err:
@@ -328,7 +329,7 @@ class StoryMode:
             self.__state = 3
             self.__completed = True
         try:
-            pygame.mixer.music.load('05-super-mario-64-main-theme.wav')
+            pygame.mixer.music.load(os.path.join('Sounds', '05-super-mario-64-main-theme.wav'))
             pygame.mixer.music.set_volume(.5)
             pygame.mixer.music.play(-1)
         except pygame.error as err:
@@ -342,7 +343,7 @@ class StoryMode:
             self.__state = 3
             self.__completed = True
         try:
-            pygame.mixer.music.load('05-super-mario-64-main-theme.wav')
+            pygame.mixer.music.load(os.path.join('Sounds', '05-super-mario-64-main-theme.wav'))
             pygame.mixer.music.set_volume(.5)
             pygame.mixer.music.play(-1)
         except pygame.error as err:
@@ -359,7 +360,7 @@ class StoryMode:
             # you win!
             self.__state = 2
         try:
-            pygame.mixer.music.load('05-super-mario-64-main-theme.wav')
+            pygame.mixer.music.load(os.path.join('Sounds', '05-super-mario-64-main-theme.wav'))
             pygame.mixer.music.set_volume(.5)
             pygame.mixer.music.play(-1)
         except pygame.error as err:

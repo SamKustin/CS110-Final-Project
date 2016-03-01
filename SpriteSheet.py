@@ -1,4 +1,5 @@
 import pygame
+import os.path
 
 
 class SpriteSheet:
@@ -7,7 +8,7 @@ class SpriteSheet:
         # .convert() is used to convert the pygame surface (screen) to the same
         # pixel format as the surface used for final display (image)
         try:
-            self.__spriteSheet = pygame.image.load(filename).convert()
+            self.__spriteSheet = pygame.image.load(os.path.join('Images', filename)).convert()
         except pygame.error:
             print("Unable to load sprite sheet image", filename)
             # raise keyword causes the SystemExit exception to be executed

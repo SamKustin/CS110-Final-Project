@@ -1,4 +1,5 @@
 import pygame
+import os.path
 import MiniGameMode
 import StoryMode
 
@@ -9,7 +10,7 @@ class WelcomeScreen:
         pygame.init()
         # loads music to play infinitely (until stop)
         try:
-            pygame.mixer.music.load('Overworld.ogg')
+            pygame.mixer.music.load(os.path.join('Sounds', 'Overworld.ogg'))
             pygame.mixer.music.set_volume(.5)
             pygame.mixer.music.play(-1)
         except pygame.error as err:
@@ -65,7 +66,7 @@ class WelcomeScreen:
     def __renderHomeScreen(self):
         try:
             # Loads the castle background
-            homeScreen = pygame.image.load("PeachCastle2.png")
+            homeScreen = pygame.image.load(os.path.join('Images', "PeachCastle2.png"))
             # Scales it to size of screen ((width, height)
             homeScreen = pygame.transform.scale(homeScreen, (640, 480))
             # Puts it onto screen, top left corner is at the points (0, 0)
@@ -75,7 +76,7 @@ class WelcomeScreen:
 
         try:
             # loads the peach logo and scales it down to correct size
-            peachSign = pygame.image.load("super_princess_peach_logo.gif")
+            peachSign = pygame.image.load(os.path.join('Images', "super_princess_peach_logo.gif"))
             peachSign = pygame.transform.scale(peachSign, (290, 100))
             self.__screen.blit(peachSign, (5, 50))
         except pygame.error as err:
@@ -83,7 +84,7 @@ class WelcomeScreen:
 
         try:
             # loads the peach image and scales it down to correct size
-            peachImg = pygame.image.load("peach.png")
+            peachImg = pygame.image.load(os.path.join('Images', "peach.png"))
             peachImg = pygame.transform.scale(peachImg, (120, 200))
             self.__screen.blit(peachImg, (50, 280))
         except pygame.error as err:
@@ -91,7 +92,7 @@ class WelcomeScreen:
 
         try:
             # loads the mario image and scales it down to correct size
-            marioImg = pygame.image.load("mario2.png")
+            marioImg = pygame.image.load(os.path.join('Images', "mario2.png"))
             marioImg = pygame.transform.scale(marioImg, (120, 200))
             self.__screen.blit(marioImg, (500, 280))
         except pygame.error as err:
