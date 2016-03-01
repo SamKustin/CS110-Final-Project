@@ -1,4 +1,5 @@
 import pygame
+import os.path
 
 
 class GameOver:
@@ -11,7 +12,7 @@ class GameOver:
         self.__completed = False
         self.__mode = "Story"
         try:
-            gameOver = pygame.mixer.Sound('game over.ogg')
+            gameOver = pygame.mixer.Sound(os.path.join('Sounds', 'game over.ogg'))
             gameOver.set_volume(.5)
             gameOver.play(0)
         except pygame.error as err:
@@ -36,7 +37,7 @@ class GameOver:
                         self.__completed = True
             self.__screen.fill((0, 0, 0))
             try:
-                background = pygame.image.load("gameover.jpeg")
+                background = pygame.image.load(os.path.join('Images', "gameover.jpeg"))
                 self.__screen.blit(background, (0, -41))
             except pygame.error as err:
                 print(err)
