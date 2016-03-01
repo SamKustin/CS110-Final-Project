@@ -4,7 +4,8 @@ A series of 3 mini games (brick breaker, simon, snake) linked to a story mode ga
 
 **Created by:** Sam Kustin, Adam Nieto, Amy Chen, Melissa Wolff
 
-This games was created as a final project for CS 110 at Binghamton University in Fall 2015.
+This game was created as a final project for CS 110 at Binghamton University in Fall 2015.
+The game was made using python and requires **pygame** to run
 
 **Mini Game Mode:**
 Play all three mini games (brick breaker, simon, and snake) in any order you want and as many times as you want.
