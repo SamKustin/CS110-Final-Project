@@ -40,7 +40,7 @@ class WelcomeScreen:
 
     def __displayMessage(self):
         # draws rect for "Press S for story mode"
-        # (where to put rectangle, (color), (width, height, x, y)
+        # (where to put rectangle, (color), (x, y, width, height)
         pygame.draw.rect(self.__screen, (255, 130, 180), (410, 70, 195, 30))
         # draws rect for M for mini game mode
         pygame.draw.rect(self.__screen, (255, 130, 180), (390, 120, 245, 30))
